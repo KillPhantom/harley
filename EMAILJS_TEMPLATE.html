@@ -1,0 +1,224 @@
+<div style="font-family: 'Lora', system-ui, sans-serif, Arial; font-size: 14px; color: #654321; background-color: #FDFBF7; padding: 20px">
+  <!-- Header -->
+  <div
+    style="
+      background: linear-gradient(135deg, #8B6F47 0%, #A0826D 100%);
+      padding: 30px;
+      border-radius: 15px 15px 0 0;
+      text-align: center;
+    "
+  >
+    <h1 style="color: white; margin: 0; font-size: 28px">🎉 新的派对问卷提交</h1>
+    <p style="color: #FFE4C4; margin: 10px 0 0 0; font-size: 14px">Harley's Party Preferences</p>
+  </div>
+
+  <!-- Content Container -->
+  <div
+    style="
+      background-color: white;
+      padding: 30px;
+      border-radius: 0 0 15px 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    "
+  >
+    <!-- 提交时间 -->
+    <div style="background-color: #FFF8DC; padding: 15px; border-radius: 10px; margin-bottom: 25px; text-align: center">
+      <div style="color: #A0826D; font-size: 12px; margin-bottom: 5px">📅 提交时间</div>
+      <div style="color: #654321; font-size: 16px; font-weight: bold">{{submitted_at}}</div>
+    </div>
+
+    <!-- 联系方式 -->
+    <table role="presentation" style="width: 100%; margin-bottom: 25px">
+      <tr>
+        <td style="vertical-align: top; width: 60px">
+          <div
+            style="
+              padding: 8px 12px;
+              background: linear-gradient(135deg, #FFE4C4, #FFDAB9);
+              border-radius: 10px;
+              font-size: 32px;
+              text-align: center;
+            "
+            role="img"
+          >
+            👤
+          </div>
+        </td>
+        <td style="vertical-align: top; padding-left: 15px">
+          <div style="color: #A0826D; font-size: 13px; margin-bottom: 5px">联系方式 (WeChat ID)</div>
+          <div style="color: #654321; font-size: 18px; font-weight: bold">{{wechat}}</div>
+        </td>
+      </tr>
+    </table>
+
+    <!-- 参加计划 -->
+    <table role="presentation" style="width: 100%; margin-bottom: 25px">
+      <tr>
+        <td style="vertical-align: top; width: 60px">
+          <div
+            style="
+              padding: 8px 12px;
+              background: linear-gradient(135deg, #FFE4C4, #FFDAB9);
+              border-radius: 10px;
+              font-size: 32px;
+              text-align: center;
+            "
+            role="img"
+          >
+            📅
+          </div>
+        </td>
+        <td style="vertical-align: top; padding-left: 15px">
+          <div style="color: #A0826D; font-size: 13px; margin-bottom: 5px">参加计划</div>
+          <div style="color: #654321; font-size: 16px; font-weight: 600">{{attendance}}</div>
+        </td>
+      </tr>
+    </table>
+
+    <!-- 活动时间 -->
+    <table role="presentation" style="width: 100%; margin-bottom: 25px">
+      <tr>
+        <td style="vertical-align: top; width: 60px">
+          <div
+            style="
+              padding: 8px 12px;
+              background: linear-gradient(135deg, #FFE4C4, #FFDAB9);
+              border-radius: 10px;
+              font-size: 32px;
+              text-align: center;
+            "
+            role="img"
+          >
+            🕐
+          </div>
+        </td>
+        <td style="vertical-align: top; padding-left: 15px">
+          <div style="color: #A0826D; font-size: 13px; margin-bottom: 5px">希望的活动时间</div>
+          <div style="color: #654321; font-size: 16px; line-height: 1.6">{{time}}</div>
+          {{#timeOther}}
+          <div style="color: #8B6F47; font-size: 14px; margin-top: 8px; font-style: italic">
+            💬 其他时间说明：{{timeOther}}
+          </div>
+          {{/timeOther}}
+        </td>
+      </tr>
+    </table>
+
+    <!-- 分隔线 -->
+    <div
+      style="
+        height: 1px;
+        background: linear-gradient(to right, transparent, #E8DFD5, transparent);
+        margin: 30px 0;
+      "
+    ></div>
+
+    <!-- 饮食限制/偏好 -->
+    <table role="presentation" style="width: 100%; margin-bottom: 25px">
+      <tr>
+        <td style="vertical-align: top; width: 60px">
+          <div
+            style="
+              padding: 8px 12px;
+              background: linear-gradient(135deg, #FFE4C4, #FFDAB9);
+              border-radius: 10px;
+              font-size: 32px;
+              text-align: center;
+            "
+            role="img"
+          >
+            🥗
+          </div>
+        </td>
+        <td style="vertical-align: top; padding-left: 15px">
+          <div style="color: #A0826D; font-size: 13px; margin-bottom: 5px">饮食限制/偏好</div>
+          <div style="color: #654321; font-size: 16px">{{diet}}</div>
+          {{#dietOther}}
+          <div style="color: #8B6F47; font-size: 14px; margin-top: 8px; font-style: italic">
+            💬 其他饮食说明：{{dietOther}}
+          </div>
+          {{/dietOther}}
+        </td>
+      </tr>
+    </table>
+
+    <!-- 过敏详情 -->
+    <table role="presentation" style="width: 100%; margin-bottom: 25px">
+      <tr>
+        <td style="vertical-align: top; width: 60px">
+          <div
+            style="
+              padding: 8px 12px;
+              background: linear-gradient(135deg, #FFE4C4, #FFDAB9);
+              border-radius: 10px;
+              font-size: 32px;
+              text-align: center;
+            "
+            role="img"
+          >
+            ⚠️
+          </div>
+        </td>
+        <td style="vertical-align: top; padding-left: 15px">
+          <div style="color: #A0826D; font-size: 13px; margin-bottom: 5px">过敏详情</div>
+          <div style="color: #654321; font-size: 16px; line-height: 1.6">{{allergyDetails}}</div>
+        </td>
+      </tr>
+    </table>
+
+    <!-- 蛋白质偏好 -->
+    <table role="presentation" style="width: 100%; margin-bottom: 25px">
+      <tr>
+        <td style="vertical-align: top; width: 60px">
+          <div
+            style="
+              padding: 8px 12px;
+              background: linear-gradient(135deg, #FFE4C4, #FFDAB9);
+              border-radius: 10px;
+              font-size: 32px;
+              text-align: center;
+            "
+            role="img"
+          >
+            🍖
+          </div>
+        </td>
+        <td style="vertical-align: top; padding-left: 15px">
+          <div style="color: #A0826D; font-size: 13px; margin-bottom: 5px">蛋白质偏好</div>
+          <div style="color: #654321; font-size: 16px">{{protein}}</div>
+        </td>
+      </tr>
+    </table>
+
+    <!-- 附加活动 -->
+    <table role="presentation" style="width: 100%; margin-bottom: 25px">
+      <tr>
+        <td style="vertical-align: top; width: 60px">
+          <div
+            style="
+              padding: 8px 12px;
+              background: linear-gradient(135deg, #FFE4C4, #FFDAB9);
+              border-radius: 10px;
+              font-size: 32px;
+              text-align: center;
+            "
+            role="img"
+          >
+            🎮
+          </div>
+        </td>
+        <td style="vertical-align: top; padding-left: 15px">
+          <div style="color: #A0826D; font-size: 13px; margin-bottom: 5px">附加活动</div>
+          <div style="color: #654321; font-size: 16px">{{activity}}</div>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Footer -->
+  <div style="text-align: center; margin-top: 20px; color: #A0826D; font-size: 12px">
+    <p style="margin: 5px 0">此邮件由 Harley's Party 问卷系统自动发送</p>
+    <p style="margin: 5px 0">💕 期待与你一起享受美好时光</p>
+  </div>
+</div>
+
