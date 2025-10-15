@@ -29,7 +29,7 @@ export default function Navigation() {
   const navLinks = [
     { path: "/", label: "首页", emoji: "🏠" },
     { path: "/supplements", label: " 补剂计划", emoji: "💊" },
-    { path: "/questionaire", label: "派对问卷", emoji: "📋" },
+    // { path: "/questionaire", label: "派对问卷", emoji: "📋" },
   ];
 
   return (
