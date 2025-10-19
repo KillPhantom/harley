@@ -654,11 +654,19 @@ export default function CollaborationPage() {
 
         {/* Contact Section */}
         <div className="text-center mt-8 p-12 bg-white/70 backdrop-blur-md rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
-          <button className="bg-[rgba(156,139,115,0.8)] text-white px-11 py-4 rounded-[25px] text-xs font-light tracking-[1.5px] uppercase transition-all hover:bg-[rgba(156,139,115,1)] hover:-translate-y-0.5">
+          <a
+            href="mailto:liuharley1@gmail.com?subject=Collaboration Inquiry&body=Hi Harley,%0D%0A%0D%0AI would like to discuss a potential collaboration opportunity.%0D%0A%0D%0AThank you!"
+            className="inline-block bg-[rgba(156,139,115,0.8)] text-white px-11 py-4 rounded-[25px] text-xs font-light tracking-[1.5px] uppercase transition-all hover:bg-[rgba(156,139,115,1)] hover:-translate-y-0.5 no-underline"
+          >
             {t("collaboration.letsCollaborate")}
-          </button>
+          </a>
           <div className="mt-6 text-[#7a6f5d] text-xs font-light">
-            {t("collaboration.email")}
+            <a
+              href="mailto:liuharley1@gmail.com"
+              className="hover:text-[#3d3426] transition-colors no-underline"
+            >
+              {t("collaboration.email")}
+            </a>
           </div>
         </div>
       </div>
