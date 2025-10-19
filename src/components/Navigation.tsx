@@ -1,13 +1,20 @@
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Languages } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function Navigation() {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t, i18n } = useTranslation();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = useCallback(() => setIsMenuOpen(false), []);
+
+  const toggleLanguage = () => {
+    const newLang = i18n.language === "zh" ? "en" : "zh";
+    i18n.changeLanguage(newLang);
+  };
 
   // 防止菜单打开时页面滚动
   useEffect(() => {
@@ -27,9 +34,10 @@ export default function Navigation() {
   }, [location.pathname, closeMenu]);
 
   const navLinks = [
-    { path: "/", label: "首页", emoji: "🏠" },
-    { path: "/supplements", label: " 补剂计划", emoji: "💊" },
-    // { path: "/questionaire", label: "派对问卷", emoji: "📋" },
+    { path: "/", label: t("nav.home"), emoji: "🏠" },
+    { path: "/supplements", label: t("nav.supplements"), emoji: "💊" },
+    { path: "/collaboration", label: t("nav.collaboration"), emoji: "🤝" },
+    // { path: "/questionaire", label: t('nav.questionaire'), emoji: "📋" },
   ];
 
   return (
@@ -43,13 +51,15 @@ export default function Navigation() {
               className="flex items-center gap-2 hover:opacity-80 transition-opacity"
             >
               <div>
-                <h1 className="text-lg font-bold text-amber-900">Harley Fit</h1>
-                <p className="text-xs text-amber-700">专业健身指导</p>
+                <h1 className="text-lg font-bold text-amber-900">
+                  {t("nav.logo")}
+                </h1>
+                <p className="text-xs text-amber-700">{t("nav.subtitle")}</p>
               </div>
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex gap-2">
+            <div className="hidden md:flex items-center gap-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
@@ -63,20 +73,42 @@ export default function Navigation() {
                   {link.label}
                 </Link>
               ))}
+
+              {/* Language Toggle Button */}
+              <button
+                onClick={toggleLanguage}
+                className="px-3 py-2 rounded-lg transition-all font-medium text-amber-900 hover:bg-amber-200 flex items-center gap-1.5"
+                aria-label="Toggle language"
+              >
+                <Languages className="w-4 h-4" />
+                <span className="text-sm">
+                  {i18n.language === "zh" ? "EN" : "中"}
+                </span>
+              </button>
             </div>
 
-            {/* Hamburger Menu Button */}
-            <button
-              onClick={toggleMenu}
-              className="md:hidden p-2 rounded-lg hover:bg-amber-200 transition-colors text-amber-900"
-              aria-label="Toggle menu"
-            >
-              {isMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
-            </button>
+            {/* Mobile Language & Menu Buttons */}
+            <div className="md:hidden flex items-center gap-2">
+              <button
+                onClick={toggleLanguage}
+                className="p-2 rounded-lg hover:bg-amber-200 transition-colors text-amber-900"
+                aria-label="Toggle language"
+              >
+                <Languages className="w-5 h-5" />
+              </button>
+
+              <button
+                onClick={toggleMenu}
+                className="p-2 rounded-lg hover:bg-amber-200 transition-colors text-amber-900"
+                aria-label="Toggle menu"
+              >
+                {isMenuOpen ? (
+                  <X className="w-6 h-6" />
+                ) : (
+                  <Menu className="w-6 h-6" />
+                )}
+              </button>
+            </div>
           </div>
         </div>
 
