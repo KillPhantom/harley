@@ -3,72 +3,95 @@ import { ChevronDown, ChevronUp, Tag } from "lucide-react";
 
 const SupplementsPage = () => {
   const [expandedSection, setExpandedSection] = useState<string | null>(
-    "fasted-cardio"
+    "morning-cardio"
   );
 
   const scheduleData = [
     {
-      id: "fasted-cardio",
-      title: "空腹有氧前 30 分钟",
-      titleEn: "Pre-Fasted Cardio",
+      id: "morning-cardio",
+      title: "早上 - 有氧前",
+      titleEn: "Morning - Pre Cardio",
       time: "早晨",
       products: [
         {
-          emoji: "🔥",
-          name: "Phoenix",
-          nameZh: "燃脂胶囊",
-          link: "https://legionathletics.com/products/supplements/phoenix-fat-burner/?el=bc_harleyl_3l488&r=3l488",
+          emoji: "💧",
+          name: "H2O Burn Drink Mix",
+          nameZh: "燃脂饮料",
+          link: "https://www.prozis.com/us/us/prozis/h2o-burn-drink-mix-8-sticks",
         },
-        { emoji: "☕", name: "Black Coffee", nameZh: "黑咖啡", link: null },
         {
           emoji: "⚡",
-          name: "Recharge",
-          nameZh: "电解质粉 1袋",
-          link: "https://legionathletics.com/products/supplements/recharge-post-workout/?el=bc_harleyl_3l488&r=3l488",
+          name: "Electrolytes",
+          nameZh: "电解质",
+          link: "https://www.prozis.com/us/us/prozis/energy-isocarb-isotonic-drink-40-servings-3-lb-8.4-oz",
+        },
+        {
+          emoji: "🐟",
+          name: "Omega 3",
+          nameZh: "鱼油 90粒",
+          link: "https://www.prozis.com/us/us/prozis/krill-omega-3-90-softgel-capsules",
+        },
+        {
+          emoji: "💊",
+          name: "Acetyl L-Carnitine",
+          nameZh: "谷氨酰胺",
+          link: "https://www.prozis.com/us/us/prozis/acetyl-l-carnitine-90-capsules",
+        },
+        {
+          emoji: "🍵",
+          name: "Green Tea EGCG 600mg",
+          nameZh: "绿茶精华 100粒",
+          link: "https://www.prozis.com/us/us/prozis/green-tea-egcg-600mg-100-capsules",
+        },
+        {
+          emoji: "🌿",
+          name: "Ashwagandha 450mg",
+          nameZh: "南非醉茄 90粒",
+          link: "https://www.prozis.com/us/us/prozis/ashwagandha-extract-450-mg-90-veg-capsules",
+        },
+        {
+          emoji: "🍊",
+          name: "Vitamin C 1000mg",
+          nameZh: "维生素C 120粒",
+          link: "https://www.prozis.com/us/us/prozis/chewable-vitamin-c-500-mg-90-chewable-tablets",
         },
       ],
     },
     {
-      id: "morning",
-      title: "早餐",
-      titleEn: "Morning",
-      time: "7-9 AM",
+      id: "noon",
+      title: "中午",
+      titleEn: "Noon",
+      time: "午餐时",
       products: [
         {
+          emoji: "💊",
+          name: "Essential Multivitamin",
+          nameZh: "综合维生素 90粒",
+          link: "https://www.prozis.com/us/us/prozis/essential-multivitamin-90-capsules",
+        },
+        {
           emoji: "🐟",
-          name: "Triton",
-          nameZh: "鱼油",
-          link: "https://legionathletics.com/products/supplements/triton-fish-oil/?el=bc_harleyl_3l488&r=3l488",
+          name: "Omega 3",
+          nameZh: "鱼油 90粒",
+          link: "https://www.prozis.com/us/us/prozis/krill-omega-3-90-softgel-capsules",
         },
         {
-          emoji: "🥬",
-          name: "Genesis",
-          nameZh: "蔬菜粉",
-          link: "https://legionathletics.com/products/supplements/genesis-superfood-supplement/?el=bc_harleyl_3l488&r=3l488",
-        },
-        {
-          emoji: "🍊",
-          name: "Vitamin C",
-          nameZh: "维生素C",
-          link: "https://legionathletics.com/products/supplements/liposomal-vitamin-c/?el=bc_harleyl_3l488&r=3l488",
+          emoji: "🌀",
+          name: "Spirulina 3000mg",
+          nameZh: "螺旋藻 90粒",
+          link: "https://www.prozis.com/us/us/prozis/spirulina-3000-mg-360-tablets",
         },
         {
           emoji: "💊",
-          name: "Vitamin B Complex",
-          nameZh: "维生素B组",
-          link: "https://legionathletics.com/products/supplements/vitamin-b-complex/?el=bc_harleyl_3l488&r=3l488",
+          name: "Vitamin B12 100mcg",
+          nameZh: "维生素B12 60粒",
+          link: "https://www.prozis.com/us/us/prozis/vitamin-b12-100-mcg-120-tablets",
         },
         {
-          emoji: "👩",
-          name: "Triumph",
-          nameZh: "女性综合维生素",
-          link: "https://legionathletics.com/products/supplements/triumph-multivitamin-for-women/?el=bc_harleyl_3l488&r=3l488",
-        },
-        {
-          emoji: "🦠",
-          name: "Biome",
-          nameZh: "益生菌",
-          link: "https://legionathletics.com/products/supplements/biome-probiotic/?el=bc_harleyl_3l488&r=3l488",
+          emoji: "🍊",
+          name: "Vitamin C 1000mg",
+          nameZh: "维生素C 120粒",
+          link: "https://www.prozis.com/us/us/prozis/chewable-vitamin-c-500-mg-90-chewable-tablets",
         },
       ],
     },
@@ -76,127 +99,121 @@ const SupplementsPage = () => {
       id: "pre-workout",
       title: "练前",
       titleEn: "Pre-Workout",
-      time: "训练前 30 分钟",
+      time: "训练前30分钟",
       products: [
         {
           emoji: "⚡",
-          name: "Pulse",
-          nameZh: "氮泵 (350mg咖啡因)",
-          link: "https://legionathletics.com/products/supplements/pulse-pre-workout/?el=bc_harleyl_3l488&r=3l488",
+          name: "Energy Charge",
+          nameZh: "氮泵 16份",
+          link: "https://www.prozis.com/us/us/prozis/energy-charge-endurance-pre-workout-16-servings-",
         },
         {
-          emoji: "💚",
-          name: "Pulse Caffeine-Free",
-          nameZh: "氮泵 (无咖啡因)",
-          link: "https://legionathletics.com/products/supplements/pulse-stim-free/?el=bc_harleyl_3l488&r=3l488",
+          emoji: "💪",
+          name: "Creatine",
+          nameZh: "肌酸 200粒",
+          link: "https://www.prozis.com/us/us/prozis/creatine-creapure-100-capsules",
         },
+      ],
+    },
+    {
+      id: "during-workout",
+      title: "训练时",
+      titleEn: "During Workout",
+      time: "训练中",
+      products: [
         {
           emoji: "💧",
-          name: "Electrolytes + Salt",
-          nameZh: "电解质 1袋 + 1g海盐",
-          link: "https://legionathletics.com/products/supplements/recharge-post-workout/?el=bc_harleyl_3l488&r=3l488",
+          name: "Electrolytes",
+          nameZh: "电解质",
+          link: "https://www.prozis.com/us/us/prozis/energy-isocarb-isotonic-drink-40-servings-3-lb-8.4-oz",
+        },
+        {
+          emoji: "💊",
+          name: "BCAA 8:1:1",
+          nameZh: "支链氨基酸",
+          link: "https://www.prozis.com/us/us/prozis/bcaa-811-10.6-oz",
+        },
+        {
+          emoji: "💊",
+          name: "EAA",
+          nameZh: "必需氨基酸",
+          link: "https://www.prozis.com/us/us/prozis/eaa-90-tablets",
+        },
+        {
+          emoji: "💪",
+          name: "L-Glutamine",
+          nameZh: "谷氨酰胺",
+          link: "https://www.prozis.com/us/us/prozis/l-glutamine-kyowa-quality-10.6-oz",
         },
       ],
     },
     {
-      id: "lunch",
-      title: "午餐",
-      titleEn: "Lunch",
-      time: "12-2 PM",
+      id: "evening",
+      title: "晚上",
+      titleEn: "Evening",
+      time: "睡前",
       products: [
-        {
-          emoji: "🐟",
-          name: "Triton",
-          nameZh: "鱼油",
-          link: "https://legionathletics.com/products/supplements/triton-fish-oil/?el=bc_harleyl_3l488&r=3l488",
-        },
-        {
-          emoji: "🍊",
-          name: "Vitamin C",
-          nameZh: "维生素C",
-          link: "https://legionathletics.com/products/supplements/liposomal-vitamin-c/?el=bc_harleyl_3l488&r=3l488",
-        },
-        {
-          emoji: "💊",
-          name: "Vitamin B Complex",
-          nameZh: "维生素B组",
-          link: "https://legionathletics.com/products/supplements/vitamin-b-complex/?el=bc_harleyl_3l488&r=3l488",
-        },
-        {
-          emoji: "👩",
-          name: "Triumph",
-          nameZh: "女性综合维生素",
-          link: "https://legionathletics.com/products/supplements/triumph-multivitamin-for-women/?el=bc_harleyl_3l488&r=3l488",
-        },
-      ],
-    },
-    {
-      id: "bedtime",
-      title: "睡前",
-      titleEn: "Bedtime",
-      time: "晚上",
-      products: [
-        {
-          emoji: "🐟",
-          name: "Triton",
-          nameZh: "鱼油",
-          link: "https://legionathletics.com/products/supplements/triton-fish-oil/?el=bc_harleyl_3l488&r=3l488",
-        },
-        {
-          emoji: "🍊",
-          name: "Vitamin C",
-          nameZh: "维生素C",
-          link: "https://legionathletics.com/products/supplements/liposomal-vitamin-c/?el=bc_harleyl_3l488&r=3l488",
-        },
-        {
-          emoji: "💊",
-          name: "Vitamin B Complex",
-          nameZh: "维生素B组",
-          link: "https://legionathletics.com/products/supplements/vitamin-b-complex/?el=bc_harleyl_3l488&r=3l488",
-        },
-        {
-          emoji: "👩",
-          name: "Triumph",
-          nameZh: "女性综合维生素",
-          link: "https://legionathletics.com/products/supplements/triumph-multivitamin-for-women/?el=bc_harleyl_3l488&r=3l488",
-        },
-        {
-          emoji: "🦠",
-          name: "Biome",
-          nameZh: "益生菌",
-          link: "https://legionathletics.com/products/supplements/biome-probiotic/?el=bc_harleyl_3l488&r=3l488",
-        },
         {
           emoji: "✨",
-          name: "Magnesium",
-          nameZh: "镁片",
-          link: "https://legionathletics.com/products/supplements/sucrosomial-magnesium/?el=bc_harleyl_3l488&r=3l488",
+          name: "Selenium",
+          nameZh: "硒 90粒",
+          link: "https://www.prozis.com/us/us/prozis/selenium-hair-skin-and-nails-90-vegetarian-capsules",
+        },
+        {
+          emoji: "🔴",
+          name: "Iron 20mg",
+          nameZh: "铁 60粒",
+          link: "https://www.prozis.com/us/us/prozis/iron-20-mg-60-capsules",
+        },
+        {
+          emoji: "💎",
+          name: "Collagen + Magnesium",
+          nameZh: "胶原蛋白+镁",
+          link: "https://www.prozis.com/us/us/prozis/collagen-magnesium-180-tablets",
+        },
+        {
+          emoji: "🍊",
+          name: "Vitamin C",
+          nameZh: "维生素C",
+          link: "https://www.prozis.com/us/us/prozis/chewable-vitamin-c-500-mg-90-chewable-tablets",
         },
       ],
     },
     {
-      id: "snacks",
-      title: "加餐选择",
-      titleEn: "Snacks & Optional",
-      time: "按需食用",
+      id: "accessories",
+      title: "其他产品",
+      titleEn: "Accessories",
+      time: "按需使用",
       products: [
         {
+          emoji: "🧤",
+          name: "Hooks",
+          nameZh: "硬拉手套",
+          link: "https://www.prozis.com/us/us/prozis/weightlifting-hooks-black-/-gray",
+        },
+        {
           emoji: "🥤",
-          name: "Clear Whey",
-          nameZh: "透明蛋白粉",
-          link: "https://legionathletics.com/products/supplements/clear-whey-protein/?el=bc_harleyl_3l488&r=3l488",
+          name: "Whey",
+          nameZh: "蛋白粉",
+          link: "https://www.prozis.com/us/us/prozis/zero-diet-whey-1.7-lb",
         },
         {
-          emoji: "🥣",
-          name: "Protein Cereal",
-          nameZh: "高蛋白麦片",
-          link: "https://legionathletics.com/products/supplements/protein-cereal/?el=bc_harleyl_3l488&r=3l488",
+          emoji: "🍶",
+          name: "Shaker",
+          nameZh: "摇摇杯",
+          link: "https://www.prozis.com/us/us/prozis/fusion-shaker-bottle-all-pink",
         },
         {
-          emoji: "🍫",
-          name: "Protein Crispy Treats",
-          nameZh: "蛋白脆米花",
-          link: "https://legionathletics.com/products/supplements/protein-crispy-treats/?el=bc_harleyl_3l488&r=3l488",
+          emoji: "📦",
+          name: "Box",
+          nameZh: "收纳盒",
+          link: "https://www.prozis.com/us/us/prozis/-stackable-box-3x170ml-dusty-blue",
+        },
+        {
+          emoji: "💊",
+          name: "Pillbox",
+          nameZh: "药盒",
+          link: "https://www.prozis.com/us/us/prozis/-pillbox-mineral-gray",
         },
       ],
     },
@@ -286,6 +303,23 @@ const SupplementsPage = () => {
         ))}
       </div>
 
+      {/* 提示信息区域 */}
+      <div className="max-w-md mx-auto px-4 py-6 text-center">
+        <div className="bg-gradient-to-br from-amber-100 to-amber-200 rounded-xl shadow-lg px-5 py-5">
+          <p className="mb-3 text-base font-semibold text-amber-900">
+            💡 点击任意产品跳转到 Prozis 商城
+          </p>
+          <div className="bg-amber-400 px-5 py-3 rounded-lg inline-block border-2 border-amber-500 shadow-md">
+            <p className="font-bold text-amber-900 text-sm mb-1">
+              🎁 记得使用折扣码
+            </p>
+            <p className="text-3xl font-black text-amber-900 tracking-wider">
+              HARLEY10
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* 固定在底部的折扣码区域 */}
       <div className="fixed bottom-0 left-0 right-0 z-40 px-4 pb-4">
         <div className="max-w-md mx-auto bg-gradient-to-r from-stone-600 to-stone-700 rounded-2xl shadow-2xl px-4 py-3">
@@ -293,23 +327,25 @@ const SupplementsPage = () => {
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center gap-2">
                 <Tag className="w-3 h-3 text-white" />
-                <span className="text-xs font-semibold text-white">折扣码</span>
+                <span className="text-xs font-semibold text-white">
+                  专属折扣码
+                </span>
               </div>
               <span className="text-base font-bold bg-amber-100 text-stone-800 px-3 py-1 rounded">
-                Liu
+                HARLEY10
               </span>
             </div>
             <a
-              href="https://legionathletics.rfrl.co/77jmj"
+              href="https://www.prozis.com/us/us/?ot=IGPRZUSA&utm_source=instagram&utm_medium=organic&utm_content=page"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 bg-amber-100 hover:bg-amber-50 text-stone-800 font-semibold text-xs py-2 px-3 rounded-lg transition-colors"
             >
-              <span>访问 Legion Athletics</span>
+              <span>访问 Prozis 商城</span>
             </a>
           </div>
           <p className="text-xs text-stone-100 text-center">
-            💕 使用折扣码享受额外优惠
+            💕 购买时输入折扣码享受 10% OFF
           </p>
         </div>
       </div>
