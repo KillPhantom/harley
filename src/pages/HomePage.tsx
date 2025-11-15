@@ -83,18 +83,32 @@ export default function HomePage() {
         <div className="content">
           <div className="services">
             <div className="service-card">
-              <div className="service-title">{t("home.offlineTraining")}</div>
+              <div className="service-title">{t("home.packageDeals")}</div>
               <div className="pricing">
                 <div className="price-item">
-                  <span className="price-label">{t("home.oneOnOne")}</span>
-                  <span className="price-value">$150</span>
+                  <span className="price-label">
+                    {t("home.fiveSessionPackage")}
+                  </span>
+                  <div className="note">{t("home.save")} $25</div>
+                  <span className="price-value">$725</span>
                 </div>
                 <div className="price-item">
-                  <span className="price-label">{t("home.oneOnTwo")}</span>
-                  <span className="price-value">$200</span>
+                  <span className="price-label">
+                    {t("home.tenSessionPackage")}
+                  </span>
+                  <div className="note">{t("home.save")} $100</div>
+                  <span className="price-value">$1,400</span>
+                </div>
+                <div className="price-item">
+                  <span className="price-label">
+                    {t("home.twentySessionPackage")}
+                  </span>
+                  <div className="note">
+                    {t("home.save")} $400 · {t("home.recommended")}
+                  </div>
+                  <span className="price-value">$2,600</span>
                 </div>
               </div>
-              <div className="note">{t("home.note")}</div>
             </div>
 
             <div className="service-card">
@@ -102,19 +116,24 @@ export default function HomePage() {
               <div className="pricing">
                 <div className="price-item">
                   <span className="price-label">
+                    {t("home.monthlyPackage")}
+                  </span>
+                  <div className="note">{t("home.monthlyDesc")}</div>
+                  <span className="price-value">$350</span>
+                </div>
+                <div className="price-item">
+                  <span className="price-label">
                     {t("home.quarterlyPackage")}
                   </span>
-                  <span className="price-value">$550</span>
+                  <div className="note">{t("home.quarterlyDesc")}</div>
+                  <span className="price-value">$800</span>
                 </div>
                 <div className="price-item">
                   <span className="price-label">
                     {t("home.halfYearPackage")}
                   </span>
-                  <span className="price-value">$750</span>
-                </div>
-                <div className="price-item">
-                  <span className="price-label">{t("home.yearlyPackage")}</span>
-                  <span className="price-value">$1000</span>
+                  <div className="note">{t("home.halfYearDesc")}</div>
+                  <span className="price-value">$1,200</span>
                 </div>
               </div>
             </div>
