@@ -86,6 +86,10 @@ export default function HomePage() {
               <div className="service-title">{t("home.packageDeals")}</div>
               <div className="pricing">
                 <div className="price-item">
+                  <span className="price-label">{t("home.singleSession")}</span>
+                  <span className="price-value">$150</span>
+                </div>
+                <div className="price-item">
                   <span className="price-label">
                     {t("home.fiveSessionPackage")}
                   </span>
