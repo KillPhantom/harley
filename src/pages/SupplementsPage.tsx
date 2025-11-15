@@ -1,10 +1,25 @@
 import { useState } from "react";
-import { ChevronDown, ChevronUp, Tag } from "lucide-react";
+import { ChevronDown, ChevronUp, Tag, Lock } from "lucide-react";
 
 const SupplementsPage = () => {
+  const [isVerified, setIsVerified] = useState(false);
+  const [inviteCode, setInviteCode] = useState("");
+  const [error, setError] = useState("");
   const [expandedSection, setExpandedSection] = useState<string | null>(
     "morning-cardio"
   );
+
+  const INVITE_CODE = "fityourbody";
+
+  const handleVerify = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (inviteCode.toLowerCase() === INVITE_CODE.toLowerCase()) {
+      setIsVerified(true);
+      setError("");
+    } else {
+      setError("邀请码错误，请重试");
+    }
+  };
 
   const scheduleData = [
     {
@@ -223,6 +238,76 @@ const SupplementsPage = () => {
     setExpandedSection(expandedSection === id ? null : id);
   };
 
+  // 如果未验证，显示验证界面
+  if (!isVerified) {
+    return (
+      <div
+        className="min-h-screen bg-amber-50 flex items-center justify-center"
+        style={{
+          paddingTop: "80px",
+          paddingBottom: "80px",
+          fontFamily: "'Lora', serif",
+        }}
+      >
+        <div className="max-w-md mx-auto px-4 w-full">
+          <div className="bg-white rounded-2xl shadow-xl p-8 border-2 border-amber-200">
+            <div className="text-center mb-6">
+              <div className="inline-block p-4 bg-amber-100 rounded-full mb-4">
+                <Lock className="w-12 h-12 text-amber-700" />
+              </div>
+              <h1 className="text-2xl font-bold text-amber-900 mb-2">
+                💊 每日补剂时间表 💪
+              </h1>
+              <p className="text-sm text-amber-700">请输入邀请码以查看内容</p>
+            </div>
+
+            <form onSubmit={handleVerify} className="space-y-4">
+              <div>
+                <label
+                  htmlFor="inviteCode"
+                  className="block text-sm font-semibold text-amber-900 mb-2"
+                >
+                  邀请码
+                </label>
+                <input
+                  type="text"
+                  id="inviteCode"
+                  value={inviteCode}
+                  onChange={(e) => {
+                    setInviteCode(e.target.value);
+                    setError("");
+                  }}
+                  placeholder="请输入邀请码"
+                  className="w-full px-4 py-3 border-2 border-amber-200 rounded-lg focus:outline-none focus:border-amber-400 transition-colors text-amber-900 placeholder-amber-300"
+                  autoComplete="off"
+                />
+                {error && (
+                  <p className="mt-2 text-sm text-red-600 font-semibold">
+                    ❌ {error}
+                  </p>
+                )}
+              </div>
+
+              <button
+                type="submit"
+                className="w-full bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-white font-bold py-3 px-4 rounded-lg transition-all shadow-md hover:shadow-lg border-2 border-amber-600"
+              >
+                验证并进入
+              </button>
+            </form>
+
+            <div className="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
+              <p className="text-xs text-amber-700 text-center">
+                💡 提示：邀请码不区分大小写
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // 验证通过后，显示原有内容
   return (
     <div
       className="min-h-screen bg-amber-50"
