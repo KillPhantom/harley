@@ -36,7 +36,7 @@ export default function Navigation() {
   const navLinks = [
     { path: "/", label: t("nav.home"), emoji: "🏠" },
     { path: "/supplements", label: t("nav.supplements"), emoji: "💊" },
-    { path: "/collaboration", label: t("nav.collaboration"), emoji: "🤝" },
+    // { path: "/collaboration", label: t("nav.collaboration"), emoji: "🤝" },
     // { path: "/questionaire", label: t('nav.questionaire'), emoji: "📋" },
   ];
 
